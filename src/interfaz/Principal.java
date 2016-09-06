@@ -6,7 +6,9 @@
 
 package interfaz;
 
+import clases.ExcepcionFraccionario;
 import clases.Fraccionario;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -111,6 +113,7 @@ public class Principal extends javax.swing.JFrame {
       denominador1=Integer.parseInt(txtDenominador1.getText()); 
       numerador2=Integer.parseInt(txtNumerador2.getText()); 
       denominador2=Integer.parseInt(txtDenominador2.getText()); 
+      try{
       f1=new Fraccionario(numerador1, denominador1); 
       f2=new Fraccionario(numerador2, denominador2); 
         switch (op) {
@@ -122,12 +125,16 @@ public class Principal extends javax.swing.JFrame {
              f3=f1.Restar(f2); 
              
              break; 
+                
         
         
             
         } 
         txtNumerador3.setText(""+f3.getNumerador()); 
-             txtDenominador3.setText(""+f3.getDenominador());
+             txtDenominador3.setText(""+f3.getDenominador()); 
+      }catch(ExcepcionFraccionario e){ 
+          JOptionPane.showMessageDialog(null, e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+      }
     }//GEN-LAST:event_cmdCalcularActionPerformed
 
     private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
