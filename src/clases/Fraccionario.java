@@ -39,5 +39,12 @@ public class Fraccionario {
        denominador=this.denominador *f2.denominador; 
        f=new Fraccionario(numerador,denominador); 
        return f;
+    } 
+    public Fraccionario Restar(Fraccionario f2){ 
+     int numerador,denominador;Fraccionario f; 
+     numerador=this.numerador * f2.denominador - this.denominador * f2.numerador; 
+     denominador=this.denominador* f2.denominador; 
+     f=new Fraccionario(numerador, denominador); 
+     return f;
     }
 }
